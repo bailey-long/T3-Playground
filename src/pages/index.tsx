@@ -20,8 +20,10 @@ const Home: NextPage = () => {
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
         <div>
-        <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer">{!user.isSignedIn && <SignInButton />}</div>
-        <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer">{!!user.isSignedIn && <><SignOutButton /> <UserProfile /></>}</div>
+          {user.isSignedIn ? 
+          <> <UserProfile /> <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignOutButton /></div> </>
+          :
+          <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignInButton /></div>}
         </div>
       </main>
     </>
