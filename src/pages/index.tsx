@@ -21,8 +21,10 @@ const Home: NextPage = () => {
       <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c]">
         <div>
           {user.isSignedIn ? 
+          /* Display user profile and Sign Out Button */
           <> <UserProfile /> <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignOutButton /></div> </>
           :
+          /* Display Sign in Button */
           <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignInButton /></div>}
         </div>
       </main>
