@@ -1,6 +1,7 @@
 import { type AppType } from "next/app";
 
 import { api } from "~/utils/api";
+import { dark } from '@clerk/themes';
 
 import "~/styles/globals.css";
 
@@ -10,7 +11,10 @@ import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ClerkProvider {...pageProps}>
+    <ClerkProvider {...pageProps}
+    appearance={{
+      baseTheme: dark
+    }}>
       <Component {...pageProps} />
     </ClerkProvider>
   );

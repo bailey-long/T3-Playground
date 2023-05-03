@@ -1,7 +1,7 @@
 import { type NextPage } from "next";
 import Head from "next/head";
 import Link from "next/link";
-import { SignInButton, SignOutButton, useUser, UserProfile } from "@clerk/nextjs";
+import { SignInButton, SignOutButton, useUser, UserProfile, UserButton } from "@clerk/nextjs";
 
 import { api } from "~/utils/api";
 
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         <div>
           {user.isSignedIn ? 
           /* Display user profile and Sign Out Button */
-          <> <UserProfile /> <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignOutButton /></div> </>
+          <> <UserButton /> <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignOutButton /></div> </>
           :
           /* Display Sign in Button */
           <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignInButton /></div>}
