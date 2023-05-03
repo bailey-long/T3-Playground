@@ -22,7 +22,12 @@ const Home: NextPage = () => {
         <div>
           {user.isSignedIn ? 
           /* Display user profile and Sign Out Button */
-          <> <UserButton /> <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignOutButton /></div> </>
+          <> <UserButton appearance={{
+            elements: {
+              className: "absolute top-0 right-0 h-16 w-16"
+            }
+          }}/>
+           <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignOutButton /></div> </>
           :
           /* Display Sign in Button */
           <div className="bg-red-500 text-white py-2 px-4 rounded cursor-pointer"><SignInButton /></div>}
